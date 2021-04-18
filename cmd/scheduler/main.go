@@ -19,6 +19,7 @@ package main
 import (
 	"math/rand"
 	"os"
+	"sigs.k8s.io/scheduler-plugins/pkg/location"
 	"time"
 
 	"k8s.io/component-base/logs"
@@ -44,6 +45,7 @@ func main() {
 	// Later they can consist of scheduler profile(s) and hence
 	// used by various kinds of workloads.
 	command := app.NewSchedulerCommand(
+		app.WithPlugin(location.Name, location.New),
 		app.WithPlugin(capacityscheduling.Name, capacityscheduling.New),
 		app.WithPlugin(coscheduling.Name, coscheduling.New),
 		app.WithPlugin(loadvariationriskbalancing.Name, loadvariationriskbalancing.New),

@@ -1,0 +1,32 @@
+apiVersion: edge.mv.io/v1
+kind: Deployment
+metadata:
+  name: test-app
+spec:
+  replicas: 2
+
+  requiredLocation:
+    continents:
+      - Europe
+    cities:
+      - Braga
+
+  # preferredLocation:
+  #   continents:
+  #   - Europe
+  #   - Asia
+  #   countries:
+  #   - Portugal
+
+  template:
+    spec:
+      containers:
+        - name: test-app
+          image: nginx:latest
+          resources:
+            requests:
+              memory: 64Mi
+              cpu: 250m
+            limits:
+              memory: 64Mi
+              cpu: 250m
