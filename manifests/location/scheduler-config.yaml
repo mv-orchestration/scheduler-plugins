@@ -10,6 +10,9 @@ profiles:
     filter:
       enabled:
         - name: Location
-    scoring:
+    preScore:
+      enabled:
+        - name: Location
+    score:
       enabled:
         - name: Location

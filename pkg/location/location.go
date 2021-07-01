@@ -8,7 +8,7 @@ import (
 
 type Location struct {
 	frameworkHandler framework.Handle
-	nodes map[string]*v1.Node
+	nodes            map[string]*v1.Node
 }
 
 var _ framework.FilterPlugin = &Location{}

@@ -11,7 +11,7 @@ func (l Location) getNodeLocations(nodeName string) (string, string, string) {
 	node, _ := l.nodes[nodeName]
 	ls := node.Labels
 
-	return ls[NodeCity],  ls[NodeCountry],  ls[NodeContinent]
+	return ls[NodeCity], ls[NodeCountry], ls[NodeContinent]
 }
 
 func isAdmissibleNode(nodeInfo *framework.NodeInfo) bool {
